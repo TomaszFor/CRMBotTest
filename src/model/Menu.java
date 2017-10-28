@@ -20,11 +20,7 @@ public class Menu extends Entity<MenuItem>{
     private Menu(){
         super.setNameList("select * from menu", resultSet -> wrapConstructor(resultSet));
     }
-    
-    /**
-     *
-     * @return
-     */
+  
     public static Menu getInstance(){
         return instance == null ? instance = new Menu() : instance;
     }

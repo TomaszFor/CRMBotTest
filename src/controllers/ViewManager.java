@@ -32,7 +32,7 @@ public class ViewManager {
         this.currentKeyboard = keyboard.getReplyKeyboardMarkup();
     }
     
-    public void setInlineKeyboard(Entity container){
+    public void setInlineKeyboard(IContainer container){
         this.currentKeyboard = keyboard.getInlineKeyboardMarkup(container.getNameList());
     }
     

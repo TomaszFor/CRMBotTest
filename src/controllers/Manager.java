@@ -34,12 +34,16 @@ public class Manager {
         this.inputManager = new InputManager();
         this.viewManager = new ViewManager();
     }
-        
+    
+    public void run(){
+        commandSwitcher();
+        initSendMessage();
+    }
     
     public SendMessage getSendMessage() {
 //        updateBill(command, inputManager.getData());
-        commandSwitcher();
-        initSendMessage();
+//        commandSwitcher();
+//        initSendMessage();
         return sendMessage;
     }
     

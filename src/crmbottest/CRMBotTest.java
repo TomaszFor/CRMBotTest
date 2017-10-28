@@ -40,7 +40,7 @@ public class CRMBotTest extends TelegramLongPollingBot{
     /**
      * @param args the command line arguments
      */
-    private Manager manager;
+    private final Manager manager;
 
     {
         manager = new Manager();        
@@ -70,7 +70,8 @@ public class CRMBotTest extends TelegramLongPollingBot{
     public void onUpdateReceived(Update update) {
                 
         manager.getInputManager().setUpdate(update);
-                
+        manager.run();
+        
         try{
             sendMessage(manager.getSendMessage());
         }catch(TelegramApiException ex){
