@@ -12,12 +12,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Supplier;
 
 /**
  *
  * @author HP
  */
-public class Positions extends Entity<Position> implements IContainer{
+public class Positions extends Repository<Position> implements IContainer{
 //    List<Position> listPositions = new ArrayList<>();
     private static Positions instance;
     
@@ -51,5 +52,12 @@ public class Positions extends Entity<Position> implements IContainer{
         } catch (SQLException ex){
             throw new RuntimeException("Error during creation list of Positions: " + ex.getMessage());
         }
+    }
+    
+    public Position getPositionById(String id){
+        return list.stream().
+                filter(position -> id.equals(position.getId())).
+                findFirst().
+                get();
     }
 }

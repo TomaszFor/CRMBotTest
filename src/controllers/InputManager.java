@@ -16,6 +16,7 @@ public class InputManager {
     
     private Long chatId = null;
     private String data = null;
+    private Parser parser;    
     
     public Long getChatId(){                       
         return chatId;
@@ -38,12 +39,21 @@ public class InputManager {
         if(update.hasEditedMessage()){
             this.chatId = update.getEditedMessage().getChatId();
         }        
+                
+        parser = new Parser(data);
     }
     
+//    public String getNextArgument(){
+//        return parser.getTokenList().get(parser.getPointer());
+//    }
+    public String getParsedDataByIndex(int index){
+        return parser.getTokenList().get(index);
+    }
+        
     public Command getCommand(){
-        Parser parser = new Parser(data);
-        String parsedCommand = parser.getTokenList().get(0);
-        switch(parsedCommand){
+//        Parser parser = new Parser(data);
+//        String parsedCommand = parser.getTokenList().get(0);
+        switch(getParsedDataByIndex(0)){
             case "start" : return Command.START;
             case "Add": return Command.ADD_POSITION;
             case "Cancel": return Command.CANCEL_POSITION;        

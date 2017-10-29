@@ -28,7 +28,7 @@ public class BillManager {
     }
     
     public void addDataToBill(String attribute, String data){
-        bill.
+        bill.addToPositionData(attribute, data);
     }
     
 }

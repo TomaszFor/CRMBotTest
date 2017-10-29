@@ -11,21 +11,37 @@ package model;
  */
 public class BillPosition {
     
-    private String name;
+//    private String name;
 //    private String volume;
     
     private Position position;
     private Volume volume;
     private float cost;
 
-    public String getName() {
-        return name;
+    public void setPosition(Position position) {
+        this.position = position;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setVolume(Volume volume) {
+        this.volume = volume;
     }
 
+    public Position getPosition() {
+        return position;
+    }
+
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public void setName(String name) {
+//        this.name = name;
+    
+    public Volume getVolume() {
+        return volume;
+    }
+
+//    }
     public float getCost() {
         return cost;
     }

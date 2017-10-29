@@ -17,6 +17,7 @@ public class Parser {
     private StringTokenizer tokenizer = null;
     private final String delimeters = " ;/.,";
     private List<String> tokens = new ArrayList<>();
+    private int pointer = 0;
     
     public Parser(String message){
         tokenizer = new StringTokenizer(trimSlash(message), delimeters);  

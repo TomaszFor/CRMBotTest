@@ -19,7 +19,7 @@ import utils.DB.DBUtils;
  *
  * @author HP
  */
-public class Volumes extends Entity<Volume> implements IContainer{
+public class Volumes extends Repository<Volume> implements IContainer{
 
 //    private List<Volume> listVolumes = new ArrayList<>();
     private static Volumes instance;
@@ -49,7 +49,7 @@ public class Volumes extends Entity<Volume> implements IContainer{
         } catch (SQLException ex){
             throw new RuntimeException("Error during creation list of Volumes: " + ex.getMessage());
         }            
-    }
+    }    
     
 //    private void setNameList(){
 //        try {

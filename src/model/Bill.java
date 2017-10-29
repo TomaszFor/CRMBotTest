@@ -19,20 +19,36 @@ public class Bill {
         list.add(new BillPosition());        
     }
     
-    public void addName(){
-        list.get(list.size()).setName(name);        
+    public void addDataToBill(Repository entity){
+        if(entity instanceof Position){
+            list.get(list.size()).setPosition(entity);
+        }
     }
     
     public void addVolume(){
-        list.get(list.si)
-    }
-    
+//        list.get(list.si)
+    }    
     
     public void insertBill(){
         
     }
     
+    
+    
     public void addToPositionData(String nameAttribute, String valueAttribute){
         
+    }
+    
+    @Override
+    public String toString(){
+        StringBuilder resultString = new StringBuilder();
+        for(int i = 0; i < list.size(); i++){
+            resultString.append("/").
+                    append(i).
+                    append(" ").
+                    append(list.get(i)).
+                    append("\n");
+        }
+        return resultString.toString();
     }
 }

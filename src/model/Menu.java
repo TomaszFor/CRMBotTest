@@ -13,7 +13,7 @@ import java.util.Optional;
  *
  * @author HP
  */
-public class Menu extends Entity<MenuItem>{
+public class Menu extends Repository<MenuItem>{
 //    private final List<MenuItem> menu = new ArrayList<>();
     private static Menu instance;
     

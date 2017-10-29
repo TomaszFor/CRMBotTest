@@ -3,15 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
-
-
-import java.util.Map;
+package controllers.strategy;
 
 /**
  *
  * @author HP
  */
-public interface IContainer {
-    public Map<String, String> getNameList();
+public interface IAlgorithm {
+    public void execute();
 }

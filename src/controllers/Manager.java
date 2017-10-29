@@ -8,15 +8,7 @@ package controllers;
 import model.Positions;
 import model.Volumes;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
-import org.telegram.telegrambots.api.objects.replykeyboard.InlineKeyboardMarkup;
-import org.telegram.telegrambots.api.objects.replykeyboard.ReplyKeyboard;
 
-
-
-/**
- *
- * @author HP
- */
 public class Manager {
     
     private SendMessage sendMessage;
@@ -56,6 +48,7 @@ public class Manager {
     }
     
     private void commandSwitcher(){
+        
         if ((currentCommand = inputManager.getCommand()) == Command.NONE) currentCommand = nextCommand;
         
         switch(currentCommand){
@@ -76,12 +69,7 @@ public class Manager {
     
     private void updateBill(Command command, String data){
         billManager.createBill();
-        billManager.addDataToBill(command.toString(), data);
+        billManager.addDataToBill(inputManager.getParsedDataByIndex(0), inputManager.getParsedDataByIndex(1));
         
     }
-    
-    
-    
-    
-    
 }
