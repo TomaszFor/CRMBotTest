@@ -3,17 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package model.repositories;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
+import model.entities.Volume;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import utils.DB.DBUtils;
 
 /**
  *
@@ -32,16 +28,6 @@ public class Volumes extends Repository<Volume> implements IContainer{
         super.setNameList("select * from volume", resultSet -> wrapConstructor(resultSet));
     }
     
-    @Override
-    public Map<String, String> getNameList() {
-//        if (listVolumes.isEmpty()) setNameList();
-        Map<String, String> map = new HashMap<>();
-        list.forEach((volume) -> {
-            map.put(volume.getId(), volume.getValue());
-        });        
-        return map;
-    }
-    
     private Volume wrapConstructor(ResultSet resultSet){
         try{
             return new Volume(resultSet.getString("idVolume"), 
@@ -49,7 +35,17 @@ public class Volumes extends Repository<Volume> implements IContainer{
         } catch (SQLException ex){
             throw new RuntimeException("Error during creation list of Volumes: " + ex.getMessage());
         }            
-    }    
+    }
+    
+    @Override
+    public Map<String, String> getNameList() {
+//        if (listVolumes.isEmpty()) setNameList();
+        Map<String, String> map = new HashMap<>();
+        list.forEach((volume) -> {
+            map.put(volume.getId(), volume.getName());
+        });        
+        return map;
+    }  
     
 //    private void setNameList(){
 //        try {

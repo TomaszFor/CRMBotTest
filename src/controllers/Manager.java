@@ -5,8 +5,8 @@
  */
 package controllers;
 
-import model.Positions;
-import model.Volumes;
+import model.repositories.*;
+
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 
 public class Manager {
@@ -69,7 +69,7 @@ public class Manager {
     
     private void updateBill(Command command, String data){
         billManager.createBill();
-        billManager.addDataToBill(inputManager.getParsedDataByIndex(0), inputManager.getParsedDataByIndex(1));
+//        billManager.addDataToBill(inputManager.getParsedDataByIndex(0), inputManager.getParsedDataByIndex(1));
         
     }
 }

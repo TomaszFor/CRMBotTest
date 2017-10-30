@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package model.entities;
 
 /**
  *
@@ -29,13 +29,6 @@ public class BillPosition {
     public Position getPosition() {
         return position;
     }
-
-//    public String getName() {
-//        return name;
-//    }
-//
-//    public void setName(String name) {
-//        this.name = name;
     
     public Volume getVolume() {
         return volume;
@@ -52,9 +45,6 @@ public class BillPosition {
 
     @Override
     public String toString() {
-        return position.getName() + ' ' + volume.getValue() + '\n' + cost;
+        return position.getName() + ' ' + volume.getName() + '\n' + cost;
     }
-    
-    
-    
 }

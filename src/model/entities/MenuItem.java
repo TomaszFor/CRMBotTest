@@ -3,21 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package model.entities;
 
 /**
  *
  * @author HP
  */
-public class MenuItem {
+public class MenuItem extends Entity {
     
-    private String id;
-    private String idPosition;
-    private String idVolume;
-    private float cost;
+    private final String idPosition;
+    private final String idVolume;
+    private final float cost;
 
     public MenuItem(String id, String idPosition, String idVolume, float cost) {
-        this.id = id;
+        super(id);
         this.idPosition = idPosition;
         this.idVolume = idVolume;
         this.cost = cost;

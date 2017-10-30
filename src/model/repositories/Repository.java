@@ -3,24 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package model.repositories;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.function.Function;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import utils.DB.DBUtils;
+import model.entities.Entity;
 
 
 /**
  *
  * @author HP
  */
-public abstract class Repository<T> {
+public abstract class Repository<T extends Entity> {
     
     protected List<T> list = new ArrayList<>();
 //    protected static Entity instance;
@@ -49,5 +49,12 @@ public abstract class Repository<T> {
             Logger.getLogger(Positions.class.getName()).log(Level.SEVERE, null, ex);
         }
         DBUtils.getInstance().closeConnection();  
+    }
+    
+    public T getEntityById(String id){
+        return list.stream().
+                filter(position -> id.equals(position.getId())).
+                findFirst().
+                get();
     }
 }

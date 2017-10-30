@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package model.repositories;
 
 import java.util.ArrayList;
 import java.util.List;
+import model.entities.*;
 
 /**
  *
@@ -19,23 +20,17 @@ public class Bill {
         list.add(new BillPosition());        
     }
     
-    public void addDataToBill(Repository entity){
+    public void addDataToBill(Entity entity){
+        
         if(entity instanceof Position){
-            list.get(list.size()).setPosition(entity);
+            list.get(list.size()).setPosition((Position)entity);
+        }
+        if(entity instanceof Volume){
+            list.get(list.size()).setVolume((Volume)entity);
         }
     }
     
-    public void addVolume(){
-//        list.get(list.si)
-    }    
-    
     public void insertBill(){
-        
-    }
-    
-    
-    
-    public void addToPositionData(String nameAttribute, String valueAttribute){
         
     }
     

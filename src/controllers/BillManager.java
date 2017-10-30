@@ -5,7 +5,9 @@
  */
 package controllers;
 
-import model.Bill;
+import java.util.List;
+import model.entities.*;
+import model.repositories.*;
 
 /**
  *
@@ -26,9 +28,18 @@ public class BillManager {
     public void createBillPosition(){
         bill.createBillPosition();
     }
-    
-    public void addDataToBill(String attribute, String data){
-        bill.addToPositionData(attribute, data);
+        
+    public void addPositionToBill(String data){
+        bill.addDataToBill(Positions.getInstance().getEntityById(data));
     }
+    
+    public void addVolumeToBill(String id){
+        bill.addDataToBill(Volumes.getInstance().getEntityById(id));
+    }
+    
+//    public List<Volume> getAvailableVolumes(String idPosition){
+//        
+//    }
+    
     
 }

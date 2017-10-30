@@ -5,8 +5,7 @@
  */
 package controllers;
 
-import model.Repository;
-import model.IContainer;
+import model.repositories.IContainer;
 import org.telegram.telegrambots.api.objects.replykeyboard.ReplyKeyboard;
 import view.Keyboard;
 import view.Text;

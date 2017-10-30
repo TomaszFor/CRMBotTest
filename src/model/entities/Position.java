@@ -3,33 +3,34 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package model.entities;
 
 /**
  *
  * @author HP
  */
-public class Position{
-    private String id;
-    private String name;
-//    private float cost;
-    private String idType;
+public class Position extends Entity{
+
+    private final String idType;
     
     public Position(String id, String name, String idType){
-        this.id = id;
-        this.name = name;
+        super(id, name);
         this.idType = idType;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public String getidType() {
         return idType;
     }
+
+//    @Override
+//    public String getId() {
+//        return id;
+//    }
+//
+//    @Override
+//    public String getName() {
+//        return name;
+//    }
+    
+    
 }

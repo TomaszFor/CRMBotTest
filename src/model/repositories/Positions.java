@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package model.repositories;
 
 
 
@@ -13,6 +13,8 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Supplier;
+import model.entities.*;
+import model.repositories.IContainer;
 
 /**
  *
@@ -54,10 +56,10 @@ public class Positions extends Repository<Position> implements IContainer{
         }
     }
     
-    public Position getPositionById(String id){
-        return list.stream().
-                filter(position -> id.equals(position.getId())).
-                findFirst().
-                get();
-    }
+//    public Position getEntityById(String id){
+//        return list.stream().
+//                filter(position -> id.equals(position.getId())).
+//                findFirst().
+//                get();
+//    }
 }

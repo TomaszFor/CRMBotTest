@@ -3,18 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package model.repositories;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Optional;
+import model.entities.MenuItem;
 
 /**
- *
+ *  
  * @author HP
  */
 public class Menu extends Repository<MenuItem>{
-//    private final List<MenuItem> menu = new ArrayList<>();
+
     private static Menu instance;
     
     private Menu(){
@@ -34,8 +35,8 @@ public class Menu extends Repository<MenuItem>{
         } catch (SQLException ex){
             throw new RuntimeException("Error during creation list of MenuItems: " + ex.getMessage());
         }
-    }
-    
+    }    
+        
 //    private void initMenu(){
 //        try {
 //            ResultSet rs = DBUtils.getInstance().getConnection().createStatement().executeQuery("select * from menu");
@@ -54,8 +55,4 @@ public class Menu extends Repository<MenuItem>{
                 .findAny();
         return menuItem.get().getCost();
     }
-    
-    
-    
-    
 }
